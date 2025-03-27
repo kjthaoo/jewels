@@ -2,6 +2,7 @@
   "name": "jewels/my-jewel-app",
   "version": "0.1.0",
   "private": false,
+  "homepage": "https://kjthaoo.github.io/jewels/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
