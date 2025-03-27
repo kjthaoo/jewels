@@ -1,5 +1,5 @@
 {
-  "name": "jewels",
+  "name": "jewels/my-jewel-app",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
