@@ -21,7 +21,7 @@ function Footer() {
                 </div>
                 <div className="footer-section">
                     <h3>Follow Us</h3>
-                    <div className="social-icons">
+                    <div className="footer-social-icons">
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                             <span className="material-icons">facebook</span>
                         </a>
