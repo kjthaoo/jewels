@@ -1,9 +1,9 @@
 import {Outlet, Link} from "react-router-dom";
-import './css/Navigation.css';
+import './css/Footer-nav.css';
 
-function Navigation() {
+function Footernav() {
     return (
-        <nav id="main-nav">
+        <nav id="footer-nav">
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/shop">Shop</Link></li>
@@ -17,4 +17,4 @@ function Navigation() {
     );
 };
 
-export default Navigation;
+export default Footernav;

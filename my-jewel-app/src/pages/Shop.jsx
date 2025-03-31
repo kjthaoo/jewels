@@ -3,6 +3,47 @@ import Item from '../components/Item';
 function Shop() {
   return (
     <>
+    <hr className="divider" />
+      <h2>SHOP</h2>
+
+      <div id="filters">
+        <h3>Filter by</h3>
+
+        {/* Material Filter */}
+        <label htmlFor="material">Material:</label>
+        <select id="material">
+          <option value="all">All</option>
+          <option value="recycled-material">Recycled Material</option>
+          <option value="recycled-metals">Recycled Metals</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="plastic">Plastic</option>
+          <option value="resin">Resin</option>
+          <option value="pearl">Pearl</option>
+          <option value="clay">Clay</option>
+          <option value="ceramic">Ceramic</option>
+          <option value="glass">Glass</option>
+        </select>
+
+        {/* Category Filter */}
+        <label htmlFor="category">Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="ring">Ring</option>
+          <option value="bracelet">Bracelet</option>
+          <option value="necklace">Necklace</option>
+          <option value="earrings">Earrings</option>
+        </select>
+
+        {/* Price Filter */}
+        <label htmlFor="price">Price:</label>
+        <select id="price">
+          <option value="all">All</option>
+          <option value="low-to-high">Lowest to Highest</option>
+          <option value="high-to-low">Highest to Lowest</option>
+        </select>
+      </div>
+  
       <section className="columns">
         <Item 
           image="images/bracelet1.jpg"

@@ -1,5 +1,37 @@
+/*structure*/
+:root {
+    --main-background-color:white;
+    --primary-color: #a8804f;
+    --secondary-color:rgb(97, 97, 97);
+    --third-color: rgb(78, 78, 78);
+    --logo-color: white;
+}
+
+/*the items*/
 .columns {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     padding: 10px;
+}
+
+/*my filters*/
+#filters {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+#filters label {
+    margin-right: 10px;
+}
+#filters select {
+    margin-bottom: 15px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/*typography*/
+h2 {
+    text-align: center;
+    margin-top: 65px;
 }
