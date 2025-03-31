@@ -51,7 +51,7 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Media queries */
+/* large query */
 @media(min-width:600px) {
   #main-top h2 {
       position: absolute;
@@ -87,37 +87,7 @@ h2 {
   }
 }
 
-@media(min-width:600px) and (max-width:1024px) {
-  #main-top h2 {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      background: rgba(43, 43, 43, 0.221);
-      padding: 20px 40px;
-      border-radius: 7px;
-      font-size: 40px;
-  }
-  #shop-btn {
-      position: absolute;
-      top: 76%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 120px;
-      height: 40px;
-      font-size: 16px;
-      background-color: black;
-      color: white;
-      border: none;
-      cursor: pointer;
-  }
-  #card1,
-  #card2 {
-      margin: 20px auto;
-  }
-}
-
+/* small query */
 @media(max-width:599px) {
   #main-top img {
       margin-left: 40px;

@@ -1,3 +1,4 @@
+import {Outlet, Link} from "react-router-dom";
 import './css/Nopage.css';
 
 function Nopage() {

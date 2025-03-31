@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Outlet, Link} from "react-router-dom";
 import './css/Footer.css';
 
 function Footer() {

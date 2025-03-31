@@ -1,5 +1,7 @@
+import {Outlet, Link} from "react-router-dom";
 import './css/Shop.css';
 import Item from '../components/Item';
+
 function Shop() {
   return (
     <>
