@@ -1,5 +1,5 @@
 import './css/Home.css';
-import Tree from '../components/Tree';
+import Tree from '../components/Item';
 function App() {
   return (
     <>
