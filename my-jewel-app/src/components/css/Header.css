@@ -1,5 +1,78 @@
+/* structure */
+:root {
+    --main-background-color: white;
+    --primary-color: #a8804f;
+    --secondary-color: rgb(97, 97, 97);
+    --third-color: rgb(78, 78, 78);
+    --logo-color: white;
+}
 header {
-    background: lightpink;
+    background-color: var(--primary-color);
     text-align: center;
     padding: 10px;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* typography */
+header h1 {
+    font-style: none;
+    color: black;
+    margin: 0;
+}
+header a {
+    text-decoration: none;
+}
+header h1:hover {
+    color: #f0d5a3;
+    transition: color 0.3s ease;
+}
+
+#search-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 10px 0;
+}
+
+#search-bar-wrapper {
+    flex: 1;
+}
+
+#search-bar {
+    width: 180px;
+    height: 15px;
+    margin-left: auto;
+    padding: 5px;
+    margin-top: 32px;
+    margin-right: 8px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.icon-container a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.icon-container a:hover {
+    color: #f0d5a3;
+}
+
+
+/* small media query */
+@media (max-width: 768px) {
+    header h1 {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
 }
