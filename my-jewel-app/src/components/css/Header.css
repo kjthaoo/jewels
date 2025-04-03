@@ -117,4 +117,22 @@ header h1:hover {
     .material-icons {
         font-size: 20px;
     }
+    #search-results {
+        margin-top: 10px;
+    }
+    
+    #search-results ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    #search-results li {
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    #search-results li:hover {
+        background-color: #f0f0f0;
+    }
+
 }
