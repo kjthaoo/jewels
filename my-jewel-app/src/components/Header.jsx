@@ -1,4 +1,4 @@
-import {Outlet, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./css/Header.css";
 import Navigation from "./Navigation";
 
@@ -9,6 +9,8 @@ function Header() {
                 <h1>Gold Pebbles</h1>
             </Link>
 
+            <Navigation />
+            
             <div id="search-bar-container">
                 <div id="search-bar-wrapper">
                     <input
@@ -29,7 +31,6 @@ function Header() {
                 </div>
             </div>
             
-            <Navigation />
         </header>
     );
 }
