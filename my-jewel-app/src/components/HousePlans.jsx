@@ -10,7 +10,7 @@ const HousePlans = () => {
     useEffect(()=>{
         // automatically execute the asyn function (it doesnt have a name to it or need a name to if since we are only callign it once)
         (async () => { // all the code thats fetching from the json file will be in here
-            const response = await axios.get("https://portiaportia.github.io/json/house-plans.json");
+            const response = await axios.get("https://localhost:3001/api/houses"); //this client side is accessing the server (server.js)
             setHousePlans(response.data);
         })(); 
     },[]);
