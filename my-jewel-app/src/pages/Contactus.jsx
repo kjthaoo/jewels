@@ -1,5 +1,6 @@
 import {Outlet, Link} from "react-router-dom";
 import './css/Contactus.css';
+import SlideShow from '../components/SlideShow';
 
 function ContactUs() {
   return (

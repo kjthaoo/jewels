@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import "./css/Customdesign.css";
+import HousePlans from '../components/HousePlans';
 
 function Customdesign() {
     return (

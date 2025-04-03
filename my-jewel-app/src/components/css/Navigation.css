@@ -31,10 +31,16 @@
 .nav-links a:hover {
     color: #f0d5a3;
 }
+#main-nav .hide-small {
+    display: none;
+}
 /* large screens */
 @media (min-width:768px) {
     #toggle-nav {
         display:none;
+    }
+    #main-nav .hide-small {
+        display: flex;
     }
 }
 

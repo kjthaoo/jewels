@@ -23,4 +23,7 @@
 .Item img:hover {
     transform: scale(1.1);
 }
+.done {
+    color: green;
+}
 
