@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./css/Header.css";
 import Navigation from "./Navigation";
+import { Link } from 'react-router-dom';
 
 function Header() {
     // my filter/search bar
@@ -54,7 +55,7 @@ function Header() {
 
     return (
         <header>
-            <h1>Gold Pebbles</h1>
+            <h1><Link to="/">Gold Pebbles</Link></h1>            
             <Navigation />
 
             <div id="search-bar-container">
@@ -68,19 +69,12 @@ function Header() {
                     />
                 </form>
 
-                <div className="social-icons">
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                        <span className="material-icons">facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                        <span className="material-icons">instagram</span>
-                    </a>
-                    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-                        <span className="material-icons">tiktok</span>
-                    </a>
+                <div className="icon-container">
+                    <a href="#"><span className="material-icons">favorite</span></a>
+                    <a href="#"><span className="material-icons">account_circle</span></a>
+                    <a href="#"><span className="material-icons">shopping_cart</span></a>
                 </div>
             </div>
-
             {searchQuery.length > 0 && (
                 <div id="search-results">
                     {filteredItems.length > 0 ? (

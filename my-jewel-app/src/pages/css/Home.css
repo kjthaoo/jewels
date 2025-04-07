@@ -29,17 +29,26 @@
 
 h2 {
   text-align: center;
-  margin-top: 65px;
+  margin-top: 35px;
 }
+
 
 .intro {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   font-size: 20px;
   color: black;
-  margin-left: 70px;
-  margin-right: 70px;
+  margin-left: 180px;
+  margin-right: 100px;
+  padding-left:200px;
+  padding-right:200px;
+  padding-bottom:50px;
+  padding-top:50px;
   line-height: 1.5;
+}
+
+.intro h2 {
+ margin-right: 260px;
 }
 
 /* Cards styling */
@@ -47,7 +56,7 @@ h2 {
 #card2 {
   margin: 20px;
   padding: 10px;
-  margin-top: 100px;
+  margin-top: 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,8 +64,8 @@ h2 {
 @media(min-width:600px) {
   #main-top h2 {
       position: absolute;
-      top: 30%;
-      left: 50%;
+      top: 29%;
+      left: 34%;
       transform: translateX(-50%);
       color: white;
       background: rgba(43, 43, 43, 0.221);
@@ -70,8 +79,8 @@ h2 {
   }
   #shop-btn {
       position: absolute;
-      top: 45%;
-      left: 50%;
+      top: 68%;
+      left: 52%;
       transform: translate(-50%, -50%);
       width: 120px;
       height: 40px;
@@ -81,9 +90,10 @@ h2 {
       border: none;
       cursor: pointer;
   }
-  #card1,
-  #card2 {
-      margin: 20px auto;
+  #card1 img,
+  #card2 img {
+      height: 100px;
+      width: auto;
   }
 }
 
@@ -129,16 +139,11 @@ h2 {
   }
   #card1 img,
   #card2 img {
-      height: 300px;
-      object-fit: cover;
+      height: 50px;
   }
   .flex-container {
       flex-direction: column;
       align-items: center;
-  }
-  .flex-container > div {
-      width: 100%;
-      margin-bottom: 20px;
   }
   #search-bar-wrapper {
       margin-left: 50px;

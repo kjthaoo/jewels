@@ -6,59 +6,127 @@
     --third-color: rgb(78, 78, 78);
     --logo-color: white;
 }
+
 header {
     background-color: var(--primary-color);
-    padding: 10px;
+    padding: 10px 40px;
     margin: 0;
     overflow-x: hidden;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
+/* search results */
+#search-bar-container {
+    position: relative; /* allows absolute positioning inside */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  #search-bar-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  
+  #search-bar {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+  }
+  
+  #search-results {
+    position: absolute;
+    top: 70px;
+    left: 1167px;
+    width: 12.7%;
+    z-index: 10;
+  }
+  
+  #search-results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+
 /* typography */
-header h1 {
+header h1 a {
     font-style: none;
     color: black;
     margin: 0;
 }
+
 header a {
     text-decoration: none;
 }
+
 header h1:hover {
     color: #f0d5a3;
     transition: color 0.3s ease;
 }
 
-/*search bar and icons*/
+/* navigation */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* search bar and icons */
 #search-bar-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 80%;
+    gap: 10px;
 }
+
 #search-bar-wrapper {
     flex: 1;
-    
 }
+
 #search-bar {
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 200px;
+    height: 32px;
+}
+
+/* icons */
+.icon-container {
     display: flex;
-    width: 180px;
-    height: 15px;
-    margin-left: auto;
-    padding: 5px;
-   
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
-.social-icons {
-    display:flex;
-    justify-content: space-between;
-}
-.social-icons a {
-    color:black;
+
+.icon-container a {
+    text-decoration: none;
+    color: #333;
     font-size: 24px;
 }
-.social-icons a:hover {
-    color: #f0d5a3;
-    transition: color 0.3s ease;
+
+.icon-container a:hover {
+    color: #007bff;
 }
+
+/* material icon styling */
+.material-icons {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.material-icons:hover {
+    color: #000;
+}
+
 
 /* large media query */
 @media (min-width: 768px) {
@@ -66,73 +134,79 @@ header h1:hover {
         flex-direction: row;
         justify-content: space-between;
     }
+
     #search-bar-container {
-        display: flex;
-        align-items: center;
         justify-content: flex-end;
         margin-left: auto;
     }
-    .social-icons {
-        margin-top: 5px;
-        margin-left: 20px;
-    }
+
     .material-icons {
-        font-size: 20px;
+        font-size: 24px;
     }
 }
 
 
 /* small media query */
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
     header h1 {
-        margin: 0;
-        padding: 0;
         width: 100%;
         text-align: center;
     }
-    #search-bar-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+    nav {
         justify-content: center;
         width: 100%;
-        margin-top: 30px;
-        margin-left: 60px;
+        margin-top: 10px;
     }
+
+    #search-bar-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
     #search-bar-wrapper {
         width: 80%;
     }
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-left: 108px;
-    }
+
     #search-bar {
         width: 100%;
         height: 30px;
         padding: 5px;
         margin: 0;
     }
+
+    .icon-container {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
     .material-icons {
         font-size: 20px;
     }
+
     #search-results {
         margin-top: 10px;
     }
-    
+
     #search-results ul {
         list-style: none;
         padding: 0;
     }
-    
+
     #search-results li {
         padding: 5px;
         border-bottom: 1px solid #ddd;
     }
-    
+
     #search-results li:hover {
         background-color: #f0f0f0;
     }
-
 }
