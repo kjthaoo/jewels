@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/jewels/static/css/main.84a6dfab.css",
-    "main.js": "/jewels/static/js/main.11bc0e5a.js",
+    "main.css": "/jewels/static/css/main.0bfbb502.css",
+    "main.js": "/jewels/static/js/main.b11eaf8a.js",
+    "static/media/ring1.jpg": "/jewels/static/media/ring1.b27c392bcb5e779ceb24.jpg",
+    "static/media/ring4.jpg": "/jewels/static/media/ring4.8c925c23591a70220b51.jpg",
+    "static/media/ring3.jpg": "/jewels/static/media/ring3.eed9106601cd0e368937.jpg",
+    "static/media/resin2.jpg": "/jewels/static/media/resin2.a4c5b2f3b49642f2423b.jpg",
+    "static/media/ring2.jpg": "/jewels/static/media/ring2.c1fba23e9c9ad05f7673.jpg",
     "index.html": "/jewels/index.html",
-    "main.84a6dfab.css.map": "/jewels/static/css/main.84a6dfab.css.map",
-    "main.11bc0e5a.js.map": "/jewels/static/js/main.11bc0e5a.js.map"
+    "main.0bfbb502.css.map": "/jewels/static/css/main.0bfbb502.css.map",
+    "main.b11eaf8a.js.map": "/jewels/static/js/main.b11eaf8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.84a6dfab.css",
-    "static/js/main.11bc0e5a.js"
+    "static/css/main.0bfbb502.css",
+    "static/js/main.b11eaf8a.js"
   ]
 }
