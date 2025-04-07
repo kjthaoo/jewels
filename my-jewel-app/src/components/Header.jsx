@@ -3,37 +3,53 @@ import "./css/Header.css";
 import Navigation from "./Navigation";
 
 function Header() {
-    // Example list of items to filter
+    // my filter/search bar
     const exampleData = [
-        { id: 1, name: "Pebble 1" },
-        { id: 2, name: "Pebble 2" },
-        { id: 3, name: "Pebble 3" },
-        { id: 4, name: "Gold Pebble" },
-        { id: 5, name: "Diamond Pebble" },
-        { id: 6, name: "Emerald Pebble" }
+        { id: 1, name: "Gold Bracelet", link: "/shop" },
+        { id: 2, name: "3D Jewelry" },
+        { id: 3, name: "Gold Starlight" },
+        { id: 4, name: "Poweder Moon" },
+        { id: 5, name: "Recycled Metal Jasmine" },
+        { id: 6, name: "Silver Feathered" },
+        { id: 7, name: "Gold Twist" },
+        { id: 8, name: "Iridescent Bloom" },
+        { id: 9, name: "TerraLace" },
+        { id: 10, name: "Ceramic Whisper" },
+        { id: 11, name: "Timeless Green" },
+        { id: 12, name: "Starlit Shards" },
+        { id: 13, name: "Gossamer Garden" },
+        { id: 14, name: "Ethereal Links" },
+        { id: 15, name: "Moonlit Pearls" },
+        { id: 16, name: "Recycled Materials" },
+        { id: 17, name: "Recycled Metals" },
+        { id: 18, name: "Gold" },
+        { id: 19, name: "Silver" },
+        { id: 20, name: "Plastic" },
+        { id: 21, name: "Resin" },
+        { id: 22, name: "Pearl" },
+        { id: 23, name: "Clay" },
+        { id: 24, name: "Ceramic" },
+        { id: 25, name: "Glass" }
     ];
 
-    const [searchQuery, setSearchQuery] = useState(""); // State for search query
-    const [filteredItems, setFilteredItems] = useState([]); // State to store filtered results
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filteredItems, setFilteredItems] = useState([]);
 
-    // Filter items based on the search query
     const filterItems = (query) => {
-        // Only show results if the query is not empty
         if (query.length > 0) {
             const filtered = exampleData.filter(item =>
                 item.name.toLowerCase().includes(query.toLowerCase())
             );
-            setFilteredItems(filtered); // Update filtered items state
+            setFilteredItems(filtered);
         } else {
-            setFilteredItems([]); // Clear results if query is empty
+            setFilteredItems([]);
         }
     };
 
-    // Handle the change in search bar input
     const handleSearchChange = (e) => {
         const query = e.target.value;
-        setSearchQuery(query); // Update search query state
-        filterItems(query); // Filter items as the user types
+        setSearchQuery(query);
+        filterItems(query);
     };
 
     return (
@@ -47,8 +63,8 @@ function Header() {
                         type="text"
                         id="search-bar"
                         placeholder="Search..."
-                        value={searchQuery} // Bind input value to state
-                        onChange={handleSearchChange} // Update state on input change
+                        value={searchQuery}
+                        onChange={handleSearchChange}
                     />
                 </form>
 
@@ -65,7 +81,6 @@ function Header() {
                 </div>
             </div>
 
-            {/* Display filtered results only if there is any input */}
             {searchQuery.length > 0 && (
                 <div id="search-results">
                     {filteredItems.length > 0 ? (

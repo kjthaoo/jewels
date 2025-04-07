@@ -1,0 +1,125 @@
+{
+    "items": [
+      {
+        "_id": 1,
+        "name": "Gold Bracelet",
+        "price": 49.99,
+        "category": "bracelet",
+        "material": "gold",
+        "img_name": "images/bracelet1.jpg"
+      },
+      {
+        "_id": 2,
+        "name": "3D Jewelry",
+        "price": 105.99,
+        "category": "ring",
+        "material": "recycled-material",
+        "img_name": "images/3d1.jpg"
+      },
+      {
+        "_id": 3,
+        "name": "Gold Starlight",
+        "price": 59.99,
+        "category": "ring",
+        "material": "gold",
+        "img_name": "images/ring2.jpg"
+      },
+      {
+        "_id": 4,
+        "name": "Powder Moon",
+        "price": 79.99,
+        "category": "ring",
+        "material": "gold",
+        "img_name": "images/secondchance.jpg"
+      },
+      {
+        "_id": 5,
+        "name": "Recycled Metal Jasmine",
+        "price": 69.99,
+        "category": "ring",
+        "material": "recycled-metals",
+        "img_name": "images/recycled1.jpg"
+      },
+      {
+        "_id": 6,
+        "name": "Silver Feathered",
+        "price": 89.99,
+        "category": "earrings",
+        "material": "silver",
+        "img_name": "images/ring3.jpg"
+      },
+      {
+        "_id": 7,
+        "name": "Gold Twist",
+        "price": 54.99,
+        "category": "necklace",
+        "material": "gold",
+        "img_name": "images/bracelet2.jpg"
+      },
+      {
+        "_id": 8,
+        "name": "Iridescent Bloom",
+        "price": 40.99,
+        "category": "earrings",
+        "material": "resin",
+        "img_name": "images/repurposedradiance.jpg"
+      },
+      {
+        "_id": 9,
+        "name": "TerraLace",
+        "price": 30.99,
+        "category": "earrings",
+        "material": "recycled-material",
+        "img_name": "images/ecoluxe.jpg"
+      },
+      {
+        "_id": 10,
+        "name": "Ceramic Whisper",
+        "price": 20.99,
+        "category": "earrings",
+        "material": "ceramic",
+        "img_name": "images/ceramic.jpg"
+      },
+      {
+        "_id": 11,
+        "name": "Timeless Green",
+        "price": 60.00,
+        "category": "earrings",
+        "material": "clay",
+        "img_name": "images/clay.jpg"
+      },
+      {
+        "_id": 12,
+        "name": "Starlit Shards",
+        "price": 15.99,
+        "category": "earrings",
+        "material": "glass",
+        "img_name": "images/glassbead.jpg"
+      },
+      {
+        "_id": 13,
+        "name": "Gossamer Garden",
+        "price": 45.99,
+        "category": "earrings",
+        "material": "glass",
+        "img_name": "images/glassgarden.jpg"
+      },
+      {
+        "_id": 14,
+        "name": "Ethereal Links",
+        "price": 66.00,
+        "category": "bracelet",
+        "material": "gold",
+        "img_name": "images/linkluxe.jpg"
+      },
+      {
+        "_id": 15,
+        "name": "Moonlit Pearls",
+        "price": 120.00,
+        "category": "earrings",
+        "material": "pearl",
+        "img_name": "images/moonlitpearls.jpg"
+      }
+    ]
+  }
+  

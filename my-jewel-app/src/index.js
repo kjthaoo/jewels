@@ -10,6 +10,7 @@ import Customdesign from './pages/Customdesign';
 import Contactus from './pages/Contactus';
 import Faqs from './pages/Faqs';
 import Nopage from './pages/Nopage';
+import ProductPage from './pages/ProductPage';
 
 function App() {
   return(
@@ -23,6 +24,7 @@ function App() {
           <Route path="contactus" element={<Contactus />} />
           <Route path="faqs" element={<Faqs />} />
           <Route path="*" element={<Nopage/>} />
+          <Route path="product" element={<ProductPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
