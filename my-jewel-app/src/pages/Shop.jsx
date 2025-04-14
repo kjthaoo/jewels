@@ -15,9 +15,8 @@ function Shop() {
     image: null,
   });
 
-  const [items, setItems] = useState([]); // State to hold your items
+  const [items, setItems] = useState([]);
 
-  // Function to handle input changes in the form
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
     setFormData((prev) => ({
@@ -26,12 +25,12 @@ function Shop() {
     }));
   };
 
-  // Function to submit new item to backend
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newItem = {
       name: formData.name,
+      description: formData.description,
       price: parseFloat(formData.price),
       material: formData.material,
       category: formData.category,
@@ -46,6 +45,9 @@ function Shop() {
 
       const response = await fetch("http://localhost:3001/api/items", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: form,
       });
 
@@ -61,14 +63,12 @@ function Shop() {
     }
   };
 
-  // Function to fetch all items from the backend
   const fetchItems = async () => {
     const response = await fetch("http://localhost:3001/api/items");
     const data = await response.json();
     setItems(data);
   };
 
-  // Fetch items when the component mounts
   useEffect(() => {
     fetchItems();
   }, []);
@@ -286,7 +286,7 @@ function Shop() {
                   <input
                     type="text"
                     name="description"
-                    value={formData.name}
+                    value={formData.description}
                     onChange={handleInputChange}
                     required
                   />
