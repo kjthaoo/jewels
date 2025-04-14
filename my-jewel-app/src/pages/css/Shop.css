@@ -35,3 +35,86 @@ h2 {
     text-align: center;
     margin-top: 65px;
 }
+
+/*add item button*/
+.add-item-button {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .add-item-button button {
+    background-color: #878787;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .add-item-button button:hover {
+    background-color: #b9b9b9;
+  }
+  
+  /*the modal*/
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .modal input[type="text"],
+  .modal input[type="number"],
+  .modal input[type="file"] {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  

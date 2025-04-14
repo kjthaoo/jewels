@@ -1,8 +1,78 @@
+import {useState} from "react";
 import {Link} from "react-router-dom";
 import './css/Shop.css';
 import Item from '../components/Item';
+import React, { useEffect } from 'react';
 
 function Shop() {
+  const [showModal, setShowModal] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    price: "",
+    material: "",
+    category: "",
+    image: null,
+  });
+
+  const [items, setItems] = useState([]); // State to hold your items
+
+  // Function to handle input changes in the form
+  const handleInputChange = (e) => {
+    const { name, value, type, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "file" ? files[0] : value,
+    }));
+  };
+
+  // Function to submit new item to backend
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newItem = {
+      name: formData.name,
+      price: parseFloat(formData.price),
+      material: formData.material,
+      category: formData.category,
+      image: formData.image,
+    };
+
+    try {
+      const form = new FormData();
+      Object.entries(newItem).forEach(([key, value]) => {
+        form.append(key, value);
+      });
+
+      const response = await fetch("http://localhost:3001/api/items", {
+        method: "POST",
+        body: form,
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Item added successfully!");
+        fetchItems(); // Re-fetch the updated list of items
+        setShowModal(false); // Close the modal
+      } else {
+        console.error("Failed to add item");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+  };
+
+  // Function to fetch all items from the backend
+  const fetchItems = async () => {
+    const response = await fetch("http://localhost:3001/api/items");
+    const data = await response.json();
+    setItems(data);
+  };
+
+  // Fetch items when the component mounts
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
   return (
     <>
     <hr className="divider" />
@@ -183,6 +253,81 @@ function Shop() {
             category="earrings" />
         </Link>
       </section>
+
+        {/* Add New Item Button */}
+        <div className="add-item-button">
+          <button onClick={() => setShowModal(true)}>Add New Item</button>
+        </div>
+
+        {/* Success Message */}
+        {successMessage && (
+          <p className="success-message">{successMessage}</p>
+        )}
+
+        {/* Modal */}
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <button className="close-button" onClick={() => setShowModal(false)}>×</button>
+              <h3>Add New Item</h3>
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
+                <label>
+                  Name*:
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Price*:
+                  <input
+                    type="number"
+                    name="price"
+                    value={formData.price}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Material*:
+                  <input
+                    type="text"
+                    name="material"
+                    value={formData.material}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Category*:
+                  <input
+                    type="text"
+                    name="category"
+                    value={formData.category}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Upload Image:
+                  <input
+                    type="file"
+                    name="image"
+                    onChange={handleInputChange}
+                    accept="image/*"
+                  />
+                </label>
+                <div className="modal-buttons">
+                  <button type="submit">Submit</button>
+                  <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
     </>
   );
 }
