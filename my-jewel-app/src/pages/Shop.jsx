@@ -51,8 +51,8 @@ function Shop() {
 
       if (response.ok) {
         setSuccessMessage("Item added successfully!");
-        fetchItems(); // Re-fetch the updated list of items
-        setShowModal(false); // Close the modal
+        fetchItems(); // Re-fetch the updated list of items?
+        setShowModal(false);
       } else {
         console.error("Failed to add item");
       }
@@ -276,6 +276,16 @@ function Shop() {
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </label>
+                <label>
+                  Description*:
+                  <input
+                    type="text"
+                    name="description"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
