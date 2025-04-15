@@ -46,7 +46,7 @@ const HousePlans = () => {
                 {houses.map((house)=>(
                     <HousePlan
                     key={house.name}
-                    _id={houses._id}
+                    _id={house._id}
                     name={house.name}
                     size={house.size}
                     bedrooms={house.bedrooms}
