@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/jewels/static/css/main.bfa11af4.css",
-    "main.js": "/jewels/static/js/main.5c641310.js",
+    "main.js": "/jewels/static/js/main.7872fa77.js",
     "static/media/ring1.jpg": "/jewels/static/media/ring1.b27c392bcb5e779ceb24.jpg",
     "static/media/ring4.jpg": "/jewels/static/media/ring4.8c925c23591a70220b51.jpg",
     "static/media/ring3.jpg": "/jewels/static/media/ring3.eed9106601cd0e368937.jpg",
@@ -9,10 +9,10 @@
     "static/media/ring2.jpg": "/jewels/static/media/ring2.c1fba23e9c9ad05f7673.jpg",
     "index.html": "/jewels/index.html",
     "main.bfa11af4.css.map": "/jewels/static/css/main.bfa11af4.css.map",
-    "main.5c641310.js.map": "/jewels/static/js/main.5c641310.js.map"
+    "main.7872fa77.js.map": "/jewels/static/js/main.7872fa77.js.map"
   },
   "entrypoints": [
     "static/css/main.bfa11af4.css",
-    "static/js/main.5c641310.js"
+    "static/js/main.7872fa77.js"
   ]
 }
