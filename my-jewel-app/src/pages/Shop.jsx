@@ -53,7 +53,7 @@ function Shop() {
     }
   
     try {
-      const response = await fetch("http://localhost:3001/api/items", {
+      const response = await fetch("https://jewels-server-v7wa.onrender.com/", {
         method: "POST",
         body: form,
       });
@@ -85,7 +85,7 @@ function Shop() {
 
 
   const fetchItems = async () => {
-    const response = await fetch("http://localhost:3001/api/items");
+    const response = await fetch("https://jewels-server-v7wa.onrender.com/");
     const data = await response.json();
     setItems(data);
   };
