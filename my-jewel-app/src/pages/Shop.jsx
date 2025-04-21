@@ -3,12 +3,17 @@ import {Link} from "react-router-dom";
 import './css/Shop.css';
 import Item from '../components/Item';
 import React, { useEffect } from 'react';
-
+import DeleteItem from "../components/DeleteItem";
+import EditItem from "../components/EditItem";
+import "../components/css/Dialog.css";
 
 function Shop() {
   const [showModal, setShowModal] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [error, setError] = useState("");
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const [showEditDialog, setShowEditDialog] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -31,27 +36,11 @@ function Shop() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted!");
-  
-    const newItem = {
-      name: formData.name,
-      description: formData.description,
-      price: parseFloat(formData.price),
-      material: formData.material,
-      category: formData.category,
-      image: formData.image,
-    };
+ 
   
     //define form first
     const form = new FormData();
-    Object.entries(newItem).forEach(([key, value]) => {
-      form.append(key, value);
-    });
-  
-    //my debugging
-    for (let pair of form.entries()) {
-      console.log(`${pair[0]}:`, pair[1]);
-    }
-  
+    
     try {
       const response = await fetch("https://jewels-server-v7wa.onrender.com/api/items", {
         method: "POST",
@@ -64,15 +53,7 @@ function Shop() {
         setSuccessMessage("Item added successfully!");
         setShowModal(false);
   
-        setFormData({
-          name: "",
-          description: "",
-          price: "",
-          material: "",
-          category: "",
-          image: null,
-        });
-
+        
       } else {
         const errorData = await response.json();
         setError(errorData.message || "Failed to add item.");
@@ -93,6 +74,16 @@ function Shop() {
   useEffect(() => {
     fetchItems();
   }, []);
+
+  const openEditDialog = (item) => {
+    setSelectedItem(item);
+    setShowEditDialog(true);
+  };
+
+  const openDeleteDialog = (item) => {
+    setSelectedItem(item);
+    setShowDeleteDialog(true);
+  };
 
   return (
     <>
@@ -137,21 +128,63 @@ function Shop() {
         </select>
       </div>
   
+      <div>
       <section className="columns">
         {items.map((item) => (
-          <Link key={item._id || item.id} to={`/product/${item.id}`}>
-            <Item
-              id={item.id}
-              image={item.image} // make sure the URL is correct
-              name={item.name}
-              price={`$${item.price}`}
-              material={item.material}
-              category={item.category}
-            />
-          </Link>
+          <div key={item._id || item.id} className="product-item">
+            <Link to={`/product/${item.id}`}>
+              <Item
+                id={item.id}
+                image={item.image} // make sure the URL is correct
+                name={item.name}
+                price={`$${item.price}`}
+                material={item.material}
+                category={item.category}
+              />
+            </Link>
+
+            <button
+              onClick={() => {
+                openEditDialog(item);
+              }}
+            >
+              Edit
+            </button>
+
+            <button
+              onClick={() => {
+                openDeleteDialog(item);
+              }}
+            >
+              Delete
+            </button>
+          </div>
         ))}
       </section>
 
+      {showEditDialog && selectedItem && (
+        <EditItem
+          _id={selectedItem._id}
+          name={selectedItem.name}
+          price={selectedItem.price}
+          material={selectedItem.material}
+          category={selectedItem.category}
+          closeEditDialog={() => setShowEditDialog(false)}
+          editItem={(updatedItem) => {
+          }}
+        />
+      )}
+
+      {showDeleteDialog && selectedItem && (
+        <DeleteItem
+          _id={selectedItem._id}
+          name={selectedItem.name}
+          closeDeleteDialog={() => setShowDeleteDialog(false)}
+          hideItem={() => {
+          }}
+        />
+      )}
+    </div>
 
         {/* Add New Item Button */}
         <div className="add-item-button">
